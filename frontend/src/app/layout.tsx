@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { WhopProvider } from '../lib/whop'
 
 export const metadata: Metadata = {
   title: 'ChargeChase - Recover Failed Payments Automatically',
@@ -13,7 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-gray-50">{children}</body>
+      <body className="min-h-screen bg-gray-50">
+        <WhopProvider>
+          {children}
+        </WhopProvider>
+      </body>
     </html>
   )
 }

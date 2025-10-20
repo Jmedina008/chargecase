@@ -1,0 +1,129 @@
+/* Iframe-specific styles for Whop embedding */
+
+/* Remove any fixed positioning that could cause issues in iframes */
+.iframe-safe {
+  position: relative !important;
+}
+
+/* Ensure content doesn't overflow iframe boundaries */
+.iframe-container {
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Responsive design for various iframe sizes */
+@media (max-width: 768px) {
+  .iframe-responsive {
+    padding: 1rem;
+  }
+  
+  .iframe-responsive .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .iframe-responsive h1 {
+    font-size: 1.5rem;
+  }
+  
+  .iframe-responsive h2 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Remove margin/padding that could cause scrollbars */
+.iframe-body {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 100vh;
+}
+
+/* Ensure buttons and interactive elements are properly sized for touch */
+.iframe-button {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+
+/* Prevent text from being too small in embedded context */
+.iframe-text {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Ensure form elements work well in iframe */
+.iframe-form input,
+.iframe-form textarea,
+.iframe-form select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Handle loading states gracefully */
+.iframe-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+/* Optimize for Whop's dark/light theme switching */
+@media (prefers-color-scheme: dark) {
+  .iframe-adaptive {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .iframe-adaptive .bg-white {
+    background-color: #2a2a2a !important;
+  }
+  
+  .iframe-adaptive .text-gray-900 {
+    color: #ffffff !important;
+  }
+  
+  .iframe-adaptive .text-gray-600 {
+    color: #cccccc !important;
+  }
+}
+
+/* Ensure proper spacing in constrained iframe environments */
+.iframe-compact {
+  padding: 0.5rem;
+}
+
+.iframe-compact .mb-8 {
+  margin-bottom: 1rem;
+}
+
+.iframe-compact .mb-6 {
+  margin-bottom: 0.75rem;
+}
+
+/* Fix any z-index issues with dropdowns/modals in iframe */
+.iframe-modal,
+.iframe-dropdown {
+  z-index: 9999;
+  position: fixed;
+}
+
+/* Ensure charts and graphics scale properly */
+.iframe-chart {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Handle scrolling in iframe context */
+.iframe-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 80vh;
+}
+
+/* Print styles (in case user wants to print from iframe) */
+@media print {
+  .iframe-no-print {
+    display: none;
+  }
+}

@@ -20,6 +20,8 @@
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
     "typescript": "^5.3.3",
+    "@whop-sdk/core": "^1.0.0",
+    "@whop/whop-sdk": "^1.0.0",
     "stripe": "^14.9.0",
     "@stripe/stripe-js": "^2.4.0",
     "lucide-react": "^0.294.0",
